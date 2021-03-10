@@ -26,6 +26,13 @@ function SortTable(props) {
   )
 }
 
-SortTable.propTypes = {}
+SortTable.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+    })
+  ),
+}
 
 export default SortTable

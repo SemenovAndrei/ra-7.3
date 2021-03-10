@@ -25,6 +25,13 @@ function MonthTable(props) {
   )
 }
 
-MonthTable.propTypes = {}
+MonthTable.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      month: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+    })
+  ),
+}
 
 export default MonthTable

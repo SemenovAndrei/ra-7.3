@@ -25,6 +25,13 @@ function YearTable(props) {
   )
 }
 
-YearTable.propTypes = {}
+YearTable.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      year: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+    })
+  ),
+}
 
 export default YearTable

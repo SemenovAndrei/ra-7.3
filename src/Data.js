@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export default class Data {
   constructor(list) {
     this.current = '2018'
@@ -20,7 +22,7 @@ export default class Data {
       return { ...el, year: separatedDate[0], month: separatedDate[1] }
     })
 
-    this.data.months = this.addValue(dateWithValues, 'month')
+    this.data.months = this.replaceMonthsNamed(this.addValue(dateWithValues, 'month'))
     this.data.years = this.addValue(dateWithValues, 'year')
   }
 
@@ -45,8 +47,17 @@ export default class Data {
     return result
   }
 
+  replaceMonthsNamed(arr) {
+    const result = arr.map((el) => {
+      return {
+        ...el,
+        month: moment(`${this.current}${el.month}01`).format('MMMM').substring(0, 3),
+      }
+    })
+    return result.reverse()
+  }
+
   getData() {
-    console.log(this.list)
     this.sortList()
     this.addValues()
 
