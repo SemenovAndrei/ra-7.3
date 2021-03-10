@@ -2,48 +2,34 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import MonthTable from './components/MonthTable/MonthTable'
 import SortTable from './components/SortTable/SortTable'
+import WithSort from './components/WithSort/WithSort'
 import YearTable from './components/YearTable/YearTable'
+import Data from './Data'
 
-// TODO:
-// 1. Загрузите данные с помощью fetch: https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hoc/aggregation/data/data.json
-// 2. Не забудьте вынести URL в переменные окружения (не хардкодьте их здесь)
-// 3. Положите их в state
-
-// export default class App extends React.Component {
-//   state = {
-//       list: []
-//   };
-
-//   render() {
-//       const {list} = this.state;
-//       return (
-//           <div id="app">
-//               <MonthTable list={list} />
-//               <YearTable list={list} />
-//               <SortTable list={list} />
-//           </div>
-//       );
-//   }
-// }
+const SortMonths = WithSort(MonthTable, 'months')
+const SortYears = WithSort(YearTable, 'years')
+const SortTableData = WithSort(SortTable)
 
 function App() {
-  const [list, setList] = useState([])
+  const [list, setList] = useState(false)
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch(process.env.REACT_APP_URL_DATA)
+      console.log('fetch')
+      const response = await fetch(process.env.REACT_APP_URL_DATA, { method: 'GET' })
       console.log(response)
       const json = await response.json()
-      setList(json)
+      setList(new Data(json).getData())
     }
+
     loadData()
   }, [])
 
   return (
     <div className="App" id="app">
-      <MonthTable list={list} />
-      <YearTable list={list} />
-      <SortTable list={list} />
+      {list && <SortMonths {...list} />}
+      {list && <SortYears {...list} />}
+      {list && <SortTableData {...list} />}
     </div>
   )
 }

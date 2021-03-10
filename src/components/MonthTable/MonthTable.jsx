@@ -8,16 +8,18 @@ function MonthTable(props) {
     <div>
       <h2>Month Table</h2>
       <table>
-        <tr>
-          <th>Month</th>
-          <th>Amount</th>
-        </tr>
-        {props.list.map((item) => (
+        <tbody>
           <tr>
-            <td>{item.month}</td>
-            <td>{item.amount}</td>
+            <th>Month</th>
+            <th>Amount</th>
           </tr>
-        ))}
+          {props.list.map((item) => (
+            <tr key={item.month}>
+              <td>{item.month}</td>
+              <td>{item.amount}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   )
