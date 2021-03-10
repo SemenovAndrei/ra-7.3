@@ -29,7 +29,6 @@ function App() {
       setLoading('')
       setError('Data empty')
       try {
-        console.log(process.env.REACT_APP_URL_DATA)
         const response = await fetch(process.env.REACT_APP_URL_DATA, { method: 'GET' })
 
         if (response.status === 200 && response.ok) {
