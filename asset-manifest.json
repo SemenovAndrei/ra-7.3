@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ra-7.3/static/css/main.13aeebcd.chunk.css",
+    "main.js": "/ra-7.3/static/js/main.0eee5f9c.chunk.js",
+    "main.js.map": "/ra-7.3/static/js/main.0eee5f9c.chunk.js.map",
+    "runtime-main.js": "/ra-7.3/static/js/runtime-main.b6241884.js",
+    "runtime-main.js.map": "/ra-7.3/static/js/runtime-main.b6241884.js.map",
+    "static/js/2.5ea5ca43.chunk.js": "/ra-7.3/static/js/2.5ea5ca43.chunk.js",
+    "static/js/2.5ea5ca43.chunk.js.map": "/ra-7.3/static/js/2.5ea5ca43.chunk.js.map",
+    "static/js/3.7e780f9c.chunk.js": "/ra-7.3/static/js/3.7e780f9c.chunk.js",
+    "static/js/3.7e780f9c.chunk.js.map": "/ra-7.3/static/js/3.7e780f9c.chunk.js.map",
+    "index.html": "/ra-7.3/index.html",
+    "static/css/main.13aeebcd.chunk.css.map": "/ra-7.3/static/css/main.13aeebcd.chunk.css.map",
+    "static/js/2.5ea5ca43.chunk.js.LICENSE.txt": "/ra-7.3/static/js/2.5ea5ca43.chunk.js.LICENSE.txt",
+    "static/media/Loading_icon.1a32f552.gif": "/ra-7.3/static/media/Loading_icon.1a32f552.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6241884.js",
+    "static/js/2.5ea5ca43.chunk.js",
+    "static/css/main.13aeebcd.chunk.css",
+    "static/js/main.0eee5f9c.chunk.js"
+  ]
+}
