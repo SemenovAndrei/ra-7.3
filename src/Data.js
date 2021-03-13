@@ -1,19 +1,24 @@
 import moment from 'moment'
+import { nanoid } from 'nanoid'
 
 export default class Data {
   constructor(list) {
     this.current = '2018'
-    this.list = list
+    this.list = list.list
     this.data = {}
   }
 
   sortList() {
-    this.data.sortList = this.list.list.sort((a, b) => {
+    this.data.sortList = this.list.sort((a, b) => {
       if (a.date < b.date) {
         return 1
       }
       return -1
     })
+  }
+
+  addId() {
+    this.data.sortList.forEach((el) => (el.id = nanoid()))
   }
 
   addValues() {
@@ -24,6 +29,7 @@ export default class Data {
 
     this.data.months = this.replaceMonthsNamed(this.addValue(dateWithValues, 'month'))
     this.data.years = this.addValue(dateWithValues, 'year')
+    this.addId()
   }
 
   addValue(arr, value) {

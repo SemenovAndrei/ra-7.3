@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { nanoid } from 'nanoid'
 
 function SortTable(props) {
   console.log('SortTable', props)
@@ -15,7 +14,7 @@ function SortTable(props) {
             <th>Amount</th>
           </tr>
           {props.list.map((item) => (
-            <tr key={nanoid()}>
+            <tr key={item.id}>
               <td>{item.date}</td>
               <td>{item.amount}</td>
             </tr>
